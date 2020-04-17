@@ -2,14 +2,14 @@ import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom'
-import { Layout, Menu } from 'antd'
+import {Layout} from 'antd'
 
 import {AppProvider} from './App-Context'
 import {Weather} from './routes/weather'
 import {Sunrise} from './routes/sunrise'
+import {AppMenu} from './components/menu/AppMenu'
 
 import 'antd/dist/antd.css'
 import './App.css'
@@ -22,10 +22,7 @@ function App() {
       <Router>
         <Layout className='layout'>
           <Header>
-            <Menu theme='dark' mode='horizontal' defaultSelectedKeys={['1']}>
-              <Menu.Item key='1'><Link to='/weather'>Weather</Link></Menu.Item>
-              <Menu.Item key='2'><Link to='/sunrise'>Sunrise</Link></Menu.Item>
-            </Menu>
+            <AppMenu />
           </Header>
           <Content className='custom-content'>
             <div className="site-layout-content">
